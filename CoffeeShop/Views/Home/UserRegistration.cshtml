@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "UserRegistration";
+}
+
+<script>
+
+    //var email = 
+
+    function EmailValidate() {
+
+        if () {
+
+        }
+    }
+
+</script>
+@model CoffeeShop.Models.UserInfo
+<form action="/Home/Summary" method="post">
+    <p></p>
+    <div class="registry">
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="form-group">
+                    <label for="inputemail">Email address</label>
+                    <input type="email" class="form-control" id="inputemail" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else. <b>;)</b></small>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="form-group">
+                    <label for="new_pass">New Password</label>
+                    <input type="password" class="form-control" id="new_pass" placeholder="Enter password">
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="form-group">
+                    <label for="password1">Retype Password</label>
+                    <input type="password" class="form-control" id="re_pass" placeholder="">
+                </div>
+                @*<button type="submit" class="btn bottom-right" onclick="Summary(@CoffeeShop.Models.UserInfo)">Submit</button>*@
+                @*<button type="submit" class="btn bottom-right">Submit</button>*@
+                <input type="submit" value="Summary" />
+            </div>
+        </div>
+    </div>
+</form>
+
