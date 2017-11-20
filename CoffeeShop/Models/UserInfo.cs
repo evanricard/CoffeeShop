@@ -13,7 +13,6 @@ namespace CoffeeShop.Models
         private string email;
         private string password;
 
-
         public UserInfo()
         {
 
