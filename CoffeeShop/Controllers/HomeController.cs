@@ -59,11 +59,12 @@ namespace CoffeeShop.Controllers
             }
         }
 
-        public ActionResult ItemList()
+        public ActionResult ItemList(Item item)
         {
             CoffeeShopDBEntities CSDB = new CoffeeShopDBEntities();
 
             List<Item> items = CSDB.Items.ToList();
+            items.Add(item);
 
             ViewBag.ItemList = items;
 
@@ -101,6 +102,11 @@ namespace CoffeeShop.Controllers
 
             return RedirectToAction("Summary2");
 
+        }
+
+        public ActionResult Admin()
+        {
+            return View("Admin");
         }
 
         public ActionResult ThankYou()
