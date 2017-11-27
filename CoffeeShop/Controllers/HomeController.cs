@@ -30,7 +30,6 @@ namespace CoffeeShop.Controllers
                 ViewBag.Email = info.Email;
                 ViewBag.Password = info.Password;
 
-
                 return View("Summary");
 
             }
@@ -42,13 +41,25 @@ namespace CoffeeShop.Controllers
             }
         }
 
-        //Display both the list of current users and items in stock
         public ActionResult Summary2(UserInfo info)
         {
-            return View("Summary2");
+            if (ModelState.IsValid)
+            {
+                ViewBag.Name = info.Name;
+                ViewBag.Email = info.Email;
+                ViewBag.Password = info.Password;
+
+                return View("Summary2");
+
+            }
+
+            else
+            {
+                return View("SummaryError");
+            }
         }
 
-        public ActionResult ItemList(UserInfo info)
+        public ActionResult ItemList()
         {
             CoffeeShopDBEntities CSDB = new CoffeeShopDBEntities();
 
@@ -56,11 +67,31 @@ namespace CoffeeShop.Controllers
 
             ViewBag.ItemList = items;
 
-            return RedirectToAction("Summary2");
+            //return RedirectToAction("Summary2");
+
+            return View("ItemList");
 
         }
 
-        public ActionResult UserList(UserInfo info)
+        public ActionResult StoreIteminDB(Item item)
+        {
+            if (ModelState.IsValid)
+            {
+                CoffeeShopDBEntities CSDB = new CoffeeShopDBEntities();
+                CSDB.Items.Add(item);
+                CSDB.SaveChanges();
+                return RedirectToAction("ThankYou");
+
+            }
+
+            else
+            {
+                return View("SummaryError");
+            }
+
+        }
+
+        public ActionResult UserList()
         {
             CoffeeShopDBEntities CSDB = new CoffeeShopDBEntities();
 
@@ -72,7 +103,11 @@ namespace CoffeeShop.Controllers
 
         }
 
-        public ActionResult
+        public ActionResult ThankYou()
+        {
+            return View("ThankYou");
+
+        }
 
         //public ActionResult AddInfo(UserInfo info)
         //{
