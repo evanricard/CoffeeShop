@@ -3,11 +3,40 @@
 }
 
 
+
 <div class="row" id="entrance">
-    <div class="col-xs-12">
-        <h1>Welcome to the coffee shop!</h1>
-        <img src="~/Images/coffee.jpg" />
+    <div class="col-md-6 text-center center-block">
+        <p></p>
+        <p></p>
+        <p></p>
+        <img src="~/Images/coffee.jpg" class="img-responsive" />
+    </div>
+
+    <div class="container col-md-6">
+        <h1>Welcome to the Coffee Shop!</h1>
+        <div class="panel panel-default">
+            <div class="panel-heading">Menu</div>
+            <div class="panel-body">Checkout our specials for <strong>@DateTime.Now.DayOfWeek!</strong>
+                    <dl>
+                        <dt>@Html.ActionLink("Coffee", "ItemList")</dt>
+                        <dd>- Black hot drink</dd>
+                        <dt>@Html.ActionLink("Milk", "ItemList")</dt>
+                        <dd>- White cold drink</dd>
+                        <dt>@Html.ActionLink("Tea", "ItemList")</dt>
+                        <dd>- Earl Grey</dd>
+
+                        @*<div class="pull-right">
+                            <dt>@Html.ActionLink("Tea", "ItemList")</dt>
+                            <dd>- Earl Grey</dd>
+                            <dt>@Html.ActionLink("Tea", "ItemList")</dt>
+                            <dd>- Earl Grey</dd>
+                            <dt>@Html.ActionLink("Tea", "ItemList")</dt>
+                            <dd>- Earl Grey</dd>
+                        </div>*@
+                       
+                    </dl>
+            </div>
+        </div>
     </div>
 </div>
-
 

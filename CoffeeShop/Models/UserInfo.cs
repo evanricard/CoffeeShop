@@ -13,6 +13,11 @@ namespace CoffeeShop.Models
         private string email;
         private string password;
 
+        //public UserInfo() : this("", "", "")
+        //{
+
+        //}
+
         public UserInfo()
         {
 
@@ -36,7 +41,7 @@ namespace CoffeeShop.Models
         [Required]
         [DataType(DataType.EmailAddress)]
         [StringLength(20, MinimumLength = 4)]
-        [RegularExpression("^[a-zA-Z0-9_\\-\\.] +)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\$")]
+        //[RegularExpression("^[a-zA-Z0-9_\\-\\.] +)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\$")]
         public string Email
         {
             set { email = value; }
