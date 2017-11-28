@@ -1,0 +1,39 @@
+﻿@model CoffeeShop.Models.UserInfo
+
+@{
+    ViewBag.Title = "UserInfoSummary";
+}
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+    </dl>
+</div>
+<p class="text-center">
+    @Html.ActionLink("Edit", "UserRegistration", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to Shop", "Index")
+</p>
